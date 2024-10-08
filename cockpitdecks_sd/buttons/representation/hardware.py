@@ -1,6 +1,7 @@
 """
 Special represenations for web decks, to draw a "hardware" button
 """
+
 import logging
 
 from cockpitdecks.buttons.representation.hardware import VirtualLED, NO_ICON
