@@ -355,9 +355,10 @@ class Streamdeck(DeckWithIcons):
 
         logger.info(f"deck {self.name}: device started")
 
-    def terminate(self):
+    def terminate(self, disconnected: bool = False):
         super().terminate()  # cleanly unload current page, if any
-        Streamdeck.terminate_device(self.device, self.name)
+        if not disconnected:
+            Streamdeck.terminate_device(self.device, self.name)
         self.running = False
         logger.info(f"deck {self.name} terminated")
 
