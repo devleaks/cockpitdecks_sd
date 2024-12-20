@@ -251,7 +251,7 @@ class Streamdeck(DeckWithIcons):
             self.device.set_touchscreen_image(i, width=image.width, height=image.height)
 
     def set_key_icon(self, key, image):
-        if key in self.get_deck_type().special_displays():
+        if key in self.deck_type).special_displays():
             self._send_touchscreen_image_to_device(image=image)
             return
         image = image.convert("RGB")
@@ -269,7 +269,7 @@ class Streamdeck(DeckWithIcons):
             return
 
         image = button.get_representation()
-        if button.index not in self.get_deck_type().special_displays():
+        if button.index not in self.deck_type).special_displays():
             if image is None:
                 logger.warning("button returned no image, using default")
                 image = self.get_default_icon()
