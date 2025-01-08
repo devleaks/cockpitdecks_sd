@@ -204,7 +204,7 @@ class Streamdeck(DeckWithIcons):
         elif action == DialEventType.TURN:
             direction = 2 if value < 0 else 3
             for i in range(abs(value)):
-                event = EncoderEvent(deck=self, button=idx, clockwise=direction == 2, code=action)
+                event = EncoderEvent(deck=self, button=idx, clockwise=direction == 3, code=action)
         else:
             logger.warning(f"deck {self.name}: invalid dial action {action}")
 
