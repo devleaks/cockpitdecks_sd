@@ -334,7 +334,7 @@ class Streamdeck(DeckWithIcons):
         if isinstance(representation, IconBase):
             self._set_key_image(button)
         elif isinstance(representation, Representation):
-            logger.info(f"button: {button.name}: do nothing representation for {type(self).__name__}")
+            logger.info(f"button: {button.name}: not an icon representation for {type(self).__name__}, no display")
         else:
             logger.warning(f"button: {button.name}: not a valid representation type {type(representation).__name__} for {type(self).__name__}")
 
