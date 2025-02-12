@@ -14,7 +14,7 @@ from cockpitdecks import RESOURCES_FOLDER, DEFAULT_PAGE_NAME, DECK_KW, DECK_ACTI
 from cockpitdecks.deck import DeckWithIcons
 from cockpitdecks.event import PushEvent, EncoderEvent, TouchEvent, SwipeEvent
 from cockpitdecks.page import Page
-from cockpitdecks.button import Button, DECK_BUTTON_DEFINITION
+from cockpitdecks.button import Button
 from cockpitdecks.buttons.representation import (
     Representation,
     IconBase,
@@ -162,7 +162,6 @@ class Streamdeck(DeckWithIcons):
         button0 = Button(
             config={
                 "index": "0",
-                DECK_BUTTON_DEFINITION: self.deck_type.get_button_definition("0"),
                 "name": "X-Plane Map (default page)",
                 "type": "push",
                 "command": "sim/map/show_current",
